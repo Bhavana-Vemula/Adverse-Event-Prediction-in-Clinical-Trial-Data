@@ -1,0 +1,31 @@
+# Default experiment configuration
+paths:
+  raw_csv: data/raw/ae.csv
+  processed_csv: data/processed/ae_clean.csv
+  train_csv: data/processed/train.csv
+  test_csv: data/processed/test.csv
+  model_dir: models
+  reports_dir: reports
+  figures_dir: reports/figures
+
+data:
+  target: serious
+  test_size: 0.2
+  random_state: 42
+  positive_label: 1
+
+columns:
+  numeric: [age, weight_kg]
+  categorical: [sex, drug_name, indication]
+  text: [concomitant_drugs]  # optional free text list like "DRUG_X|DRUG_Y"
+
+modeling:
+  xgboost:
+    n_estimators: 400
+    max_depth: 4
+    learning_rate: 0.05
+    subsample: 0.9
+    colsample_bytree: 0.8
+  logistic_regression:
+    C: 1.0
+    max_iter: 200
