@@ -54,10 +54,6 @@ python -m ae_predictor.train --config configs/default.yaml
 python -m ae_predictor.evaluate --config configs/default.yaml
 ```
 
-### 4) (Optional) Streamlit app
-```bash
-streamlit run dashboards/streamlit_app.py
-```
 
 ## 🧪 Models & Metrics
 - Baselines: **Logistic Regression** (with class weights) and **XGBoost**
